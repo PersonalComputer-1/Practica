@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Прокат оборудования</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Прокат</h1>
+  <div id="auth">
+    <input id="email" placeholder="email" value="admin@rent.ru">
+    <input id="pass" type="password" placeholder="пароль" value="admin123">
+    <button onclick="login()">Войти</button>
+    <button onclick="register()">Регистрация</button>
+  </div>
+</header>
+<main>
+  <!-- Блок Администратора -->
+  <section id="adminPanel" style="display:none">
+    <h2>Панель администратора</h2>
+    <div class="card">
+      <h3>Добавить оборудование</h3>
+      <input id="newEqName" placeholder="Название">
+      <input id="newEqPrice" type="number" placeholder="Цена за сутки">
+      <input id="newEqQty" type="number" placeholder="Количество">
+      <input id="newEqDesc" placeholder="Описание">
+      <button onclick="addEquipment()">Добавить</button>
+    </div>
+    <div class="card">
+      <h3>Статистика</h3>
+      <button onclick="loadStats()">Обновить статистику</button>
+      <div id="statsResult" style="margin-top: 10px;"></div>
+    </div>
+  </section>
+
+  <!-- Блок Менеджера -->
+  <section id="managerPanel" style="display:none">
+    <h2>Панель менеджера (Все брони)</h2>
+    <div id="allBookings"></div>
+  </section>
+
+  <!-- Каталог (для всех) -->
+  <section id="catalog">
+    <input id="search" placeholder="Поиск..." oninput="loadCatalog()">
+    <div id="eqList"></div>
+  </section>
+
+  <!-- Личный кабинет (для клиента) -->
+  <section id="lk" style="display:none">
+    <h2>Мои брони</h2>
+    <div id="myBookings"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

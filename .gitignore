@@ -1,0 +1,6 @@
+bin/
+obj/
+.vs/
+rentapp.db
+rentapp.db-shm
+rentapp.db-wal
